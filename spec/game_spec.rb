@@ -20,4 +20,10 @@ describe 'Game' do
       expect(subject.turn).to eq subject.o
     end
   end
+  describe '#create_board' do
+    it 'creates a new board' do
+      subject.create_board
+      expect(subject.board).to be_a Board
+    end
+  end
 end

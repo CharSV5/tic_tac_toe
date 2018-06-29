@@ -1,7 +1,8 @@
 require_relative 'player'
+require_relative 'board'
 
 class Game
-  attr_reader :x, :o, :turn
+  attr_reader :x, :o, :turn, :board
 
   def create_players
     @x = Player.new('x')
@@ -15,4 +16,9 @@ class Game
   def switch_player_turn
     @turn = @turn == @x ? @o : @x
   end
+
+  def create_board(board = Board.new)
+    @board = board
+  end
+
 end

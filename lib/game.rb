@@ -21,11 +21,8 @@ class Game
     @board = board
   end
 
-  def play(field)
-      i = field - 1
-      if @board.grid[i].class == Integer
-        @board.grid[i] = @turn.name
-        @turn.record.record_play(field)
-      end
-    end
+  def create_combinations
+    turn.history.combination(3).sort
+  end
+
   end

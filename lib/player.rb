@@ -16,4 +16,5 @@ class Player
     @history.push(field)
   end
 
+
 end

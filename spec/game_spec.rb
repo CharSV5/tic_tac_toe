@@ -26,15 +26,27 @@ describe 'Game' do
       expect(subject.board).to be_a Board
     end
   end
+  before(:each) do
+    subject.start_game('player x first')
+    subject.turn.play(3)
+    subject.turn.play(7)
+    subject.turn.play(9)
+    subject.turn.play(1)
+  end
   describe '#create_combinations' do
     it 'creates all the different winning combinations' do
-      subject.start_game('player x first')
-      subject.x.record_play(3)
-      subject.x.record_play(7)
-      subject.x.record_play(9)
-      subject.x.record_play(1)
-      expect(subject.create_combinations).to eq [[3, 7, 1],
-        [3, 7, 9], [3, 9, 1], [7, 9, 1]]
+      expect(subject.create_combinations).to eq [[1, 3, 7],
+      [1, 3, 9], [1, 7, 9], [3, 7, 9]]
+
+    end
+  end
+  describe 'winner?' do
+    it 'knows if someone has not won' do
+      expect(subject.winner?).to eq false
+    end
+    it 'knows if someone has won' do
+      subject.turn.play(2)
+      expect(subject.winner?).to eq true
     end
   end
 end

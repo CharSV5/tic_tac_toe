@@ -2,7 +2,11 @@ require_relative 'player'
 require_relative 'board'
 
 class Game
-  attr_reader :x, :o, :turn, :board
+  attr_reader :x, :o, :turn, :board, :game_over, :win
+
+  def initialize
+    @game_over = false
+  end
 
   def create_players
     @x = Player.new('x', @board)
@@ -22,7 +26,13 @@ class Game
   end
 
   def create_combinations
-    turn.history.combination(3).sort
+    turn.history.sort.combination(3).sort
   end
 
+  def winner?
+    @win = @board.combinations.map do |comb|
+      create_combinations.include?(comb)
+    end
+    @win.include?(true)
   end
+end

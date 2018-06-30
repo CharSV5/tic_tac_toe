@@ -9,7 +9,9 @@ class Player
 
   def play(field)
     i = field - 1
-    @board.grid[i] = @name if @board.grid[i].class == Integer
+    return if @board.grid[i].class != Integer
+      @board.grid[i] = @name
+      record_play(field)
   end
 
   def record_play(field)

@@ -2,10 +2,25 @@ require_relative 'player'
 require_relative 'board'
 
 class Game
-  attr_reader :x, :o, :turn, :board, :game_over, :win
+  attr_reader :x, :o, :turn, :board, :game_over, :win, :game
 
   def initialize
     @game_over = false
+  end
+
+
+  def self.create
+    @game = Game.new
+  end
+
+  def self.instance
+    @game
+  end
+
+  def run
+    create_board
+    create_players
+    start_game('random')
   end
 
   def create_players

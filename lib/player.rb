@@ -17,6 +17,4 @@ class Player
   def record_play(field)
     @history.push(field)
   end
-
-
 end

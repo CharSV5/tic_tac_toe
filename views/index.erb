@@ -6,27 +6,22 @@
     <title></title>
   </head>
   <body>
+    <% game = Game.new %>
+    <% game.create_board %>
+    <% game.create_players %>
+    <% game.start_game('random') %>
     Welcome to Tic Tac Toe
-
-    <table id="board">
-<tr>
-<td id="1"></td>
-<td id="2"></td>
-<td id="3"></td>
-  </tr>
-<tr>
-<td id="4"></td>
-<td id="5"></td>
-<td id="6"></td>
-  </tr>
-<tr>
-<td id="7"></td>
-<td id="8"></td>
-<td id="9"></td>
-  </tr>
-</table>
-
-
-  </table>
+<br>
+<button type="button" id="1"></button>
+<button type="button" id="2"></button>
+<button type="button" id="3"></button>
+<br>
+<button type="button" id="4"></button>
+<button type="button" id="5"></button>
+<button type="button" id="6"></button>
+<br>
+<button type="button" id="7"></button>
+<button type="button" id="8"></button>
+<button type="button" id="9"></button>
   </body>
 </html>

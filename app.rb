@@ -19,12 +19,13 @@ class TicTacToe < Sinatra::Base
     print "game: #{@game}!!"
     print "turn: #{@game.turn}!"
     print "board: #{@game.board}!"
-
-    @game.turn.play(params[:name])
+    field = params[:field]
+    @game.turn.play(field.to_i)
     redirect('/play')
   end
 
   get '/play' do
+    @game = session[:game]
     erb :index
   end
 

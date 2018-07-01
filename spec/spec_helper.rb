@@ -6,7 +6,7 @@ require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
 require 'simplecov'
-# require 'features/web_helpers'
+require 'features/web_helpers'
 
 Capybara.app = TicTacToe
 

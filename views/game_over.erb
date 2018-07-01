@@ -2,10 +2,16 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
-    Player <%= @game.turn.name %> won!
+    <div id="winner">
+      Player <%= @game.turn.name %> won!
+    </div>
+    <form action="/" method="get">
+    <button type="submit" value="New Game"> New Game</button>
+    </form>
   </body>
 </html>

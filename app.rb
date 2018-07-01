@@ -26,10 +26,12 @@ class TicTacToe < Sinatra::Base
     puts "field: #{field}"
     play = @game.turn.play(field.to_i)
     puts "Play: #{play}"
-    flash[:notice] = 'That square is taken, try again!' if play == nil
     if @game.winner?
       puts 'WINNER!!!'
       redirect('/game_over')
+    elsif play == nil
+      flash[:notice] = 'That square is taken, try again!'
+      redirect('/play')
     else
       flash[:notice] = 'The game ended in a tie, choose new game to play again!' if @game.draw?
       @game.switch_player_turn

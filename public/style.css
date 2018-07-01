@@ -7,10 +7,18 @@ width: 150px;
 body {
   text-align: center;
   background-color: #e8ebef;
+
+}
+
+.text {
   font-family: 'Sofia';font-size: 34px;
 }
 #table {
   margin-left: 38%;
-
   text-align: center;
+  font-family: 'Sofia';font-size: 44px;
+}
+
+#winner {
+  font-family: 'sofia';font-size: 100px;
 }

@@ -14,4 +14,21 @@ feature 'players can play a game' do
     click_button 'Submit'
     expect(page).to have_content 'Congratulations!'
   end
+
+  scenario 'players can draw' do
+    start_game
+    continue_game
+    fill_in 'field', with: 9
+    click_button 'Submit'
+    fill_in 'field', with: 7
+    click_button 'Submit'
+    expect(page).to have_content 'The game ended in a tie'
+  end
+
+  scenario 'player cannot play same field as one already taken' do
+    start_game
+    fill_in 'field', with: 1
+    click_button 'Submit'
+    expect(page).to have_content 'That square is taken'
+  end
 end

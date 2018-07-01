@@ -1,5 +1,16 @@
 td {
-border: 1px solid black;
-height: 50px;
-width: 50px;
+border: 2px solid black;
+height: 150px;
+width: 150px;
+}
+
+body {
+  text-align: center;
+  background-color: #e8ebef;
+  font-family: 'Sofia';font-size: 34px;
+}
+#table {
+  margin-left: 38%;
+
+  text-align: center;
 }

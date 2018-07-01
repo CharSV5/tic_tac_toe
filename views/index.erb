@@ -2,12 +2,14 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="style.css">
+    <link href='https://fonts.googleapis.com/css?family=Sofia' rel='stylesheet'>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body>
     Welcome to Tic Tac Toe
 <br>
+<div id="table">
 <table>
     <tr>
         <% @game.board.grid[0,3].each do |field| %>
@@ -25,9 +27,17 @@
       <% end %>
     </tr>
 </table>
+</div>
+<br>
+Player <%= @game.turn.name %>'s turn!
 <form action="/play" method="post">
-<input type="text" name="field">
+<label for="field">Choose a number corresponding to the grid</label>
+<input type="text" name="field" style="width: 12px;">
 <button type="submit" value="Submit">Submit</button>
+</form>
+<%= styled_flash %>
+<form action="/" method="get">
+<button type="submit" value="New Game"> New Game</button>
 </form>
 
   </body>

@@ -50,4 +50,8 @@ class Game
     end
     @win.include?(true)
   end
+
+  def draw?
+    @board.grid.all? { |field| field.class == String }
+  end
 end

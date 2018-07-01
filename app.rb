@@ -4,7 +4,6 @@ require './lib/player'
 require './lib/game'
 require './lib/board'
 
-
 class TicTacToe < Sinatra::Base
   enable :sessions
   register Sinatra::Flash
@@ -19,17 +18,12 @@ class TicTacToe < Sinatra::Base
 
   post '/play' do
     @game = session[:game]
-    puts "game: #{@game}!!"
-    puts "turn: #{@game.turn}!"
-    puts "board: #{@game.board}!"
     field = params[:field]
-    puts "field: #{field}"
     play = @game.turn.play(field.to_i)
-    puts "Play: #{play}"
     if @game.winner?
       puts 'WINNER!!!'
       redirect('/game_over')
-    elsif play == nil
+    elsif play.nil?
       flash[:notice] = 'That square is taken, try again!'
       redirect('/play')
     else
@@ -49,5 +43,5 @@ class TicTacToe < Sinatra::Base
     erb :index
   end
 
-  run! if app_file == $0
+  run! if app_file == $PROGRAM_NAME
 end

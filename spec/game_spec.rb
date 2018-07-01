@@ -36,8 +36,7 @@ describe 'Game' do
   describe '#create_combinations' do
     it 'creates all the different winning combinations' do
       expect(subject.create_combinations).to eq [[1, 3, 7],
-      [1, 3, 9], [1, 7, 9], [3, 7, 9]]
-
+                                                 [1, 3, 9], [1, 7, 9], [3, 7, 9]]
     end
   end
   describe 'winner?' do

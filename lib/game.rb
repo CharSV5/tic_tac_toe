@@ -8,7 +8,6 @@ class Game
     @game_over = false
   end
 
-
   def self.create
     @game = Game.new
   end

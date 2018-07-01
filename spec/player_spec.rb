@@ -19,8 +19,8 @@ describe Player do
   describe '#record_play' do
     it 'records the cuurent play to the history array' do
       subject.record_play(4)
-      subject.record_play (1)
-      expect(subject.history).to eq [4,1]
+      subject.record_play 1
+      expect(subject.history).to eq [4, 1]
     end
   end
 end

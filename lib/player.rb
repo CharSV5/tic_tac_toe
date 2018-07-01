@@ -10,8 +10,8 @@ class Player
   def play(field)
     i = field - 1
     return if @board.grid[i].class != Integer
-      @board.grid[i] = @name.upcase
-      record_play(field)
+    @board.grid[i] = @name.upcase
+    record_play(field)
   end
 
   def record_play(field)

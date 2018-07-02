@@ -48,4 +48,14 @@ describe 'Game' do
       expect(subject.winner?).to eq true
     end
   end
+  describe 'draw?' do
+    it 'knows if the game is a draw' do
+      subject.turn.play(5)
+      subject.turn.play(2)
+      subject.turn.play(4)
+      subject.turn.play(6)
+      subject.turn.play(8)
+      expect(subject.draw?).to be true
+    end
+  end
 end

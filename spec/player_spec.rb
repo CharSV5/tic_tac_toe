@@ -1,7 +1,6 @@
 require 'player'
 
 describe Player do
-  # let(:board) { double('board', :grid => [1, 2, 3, 4, 5, 6, 7, 8, 9]) }
   subject { Player.new('x', Board.new) }
   describe '#play' do
     before (:each) do

@@ -19,12 +19,12 @@ class TicTacToe < Sinatra::Base
   post '/play' do
     @game = session[:game]
     field = params[:field]
-    play = @game.turn.play(field.to_i)
+    play = @game.turn.play(field.to_i) if field.between?('1','9')
     if @game.winner?
       puts 'WINNER!!!'
       redirect('/game_over')
     elsif play.nil?
-      flash[:notice] = 'That square is taken, try again!'
+      flash[:notice] = 'That is not a legitimate move, please choose a free square from 1 - 9'
       redirect('/play')
     else
       flash[:notice] = 'The game ended in a tie, choose new game to play again!' if @game.draw?

@@ -29,6 +29,6 @@ feature 'players can play a game' do
     start_game
     fill_in 'field', with: 1
     click_button 'Submit'
-    expect(page).to have_content 'That square is taken'
+    expect(page).to have_content 'please choose a free square from 1 - 9'
   end
 end
